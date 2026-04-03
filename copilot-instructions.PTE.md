@@ -175,7 +175,7 @@ For completely new logic, choose Area/Feature deliberately and consistently; Fea
 A consistent structure is required to ensure fast orientation across projects.
 
 ### Root must contain
-- `.git`, `.gitignore`, `.gitmodules`
+- `.gitignore`, `.gitmodules`
 - `settings.json`, `*.code-workspace`, `*.ruleset.json`
 
 ### Root folders (typical)
