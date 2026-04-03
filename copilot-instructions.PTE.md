@@ -241,7 +241,7 @@ Event subscriber codeunits are placed in a dedicated `EventSub` folder to avoid 
 
 ### Translation
 - Keep translation files up to date
-- Translate english terms into german by referencing Microsoft standard base application translations if possible
+- Translate English terms into German by referencing Microsoft standard base application translations if possible.
 
 ---
 
