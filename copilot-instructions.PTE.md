@@ -16,7 +16,8 @@ Always follow the rules below when making changes.
 
 ### Compile an AL app
 
-Run the following PowerShell snippet to compile each modified AL project **before** staging a commit:
+Run the following PowerShell snippet to compile each modified AL project **before** staging a commit.
+Replace `<MainAppFolder>` and `<TestAppFolder>` with the actual AL-Go app folder names from this repository (check the repo root for the correct folder names):
 
 ```powershell
 Import-Module BcContainerHelper
@@ -24,15 +25,15 @@ Import-Module BcContainerHelper
 # Compile the main app
 Compile-AppWithBcCompilerFolder `
     -compilerFolder $env:BC_COMPILER_FOLDER `
-    -appProjectFolder "Customizing" `
-    -appOutputFolder "Customizing/.build"
+    -appProjectFolder "<MainAppFolder>" `
+    -appOutputFolder "<MainAppFolder>/.build"
 
 # Compile the test app (depends on the main app output)
 Compile-AppWithBcCompilerFolder `
     -compilerFolder $env:BC_COMPILER_FOLDER `
-    -appProjectFolder "Customizing.Test" `
-    -appOutputFolder "Customizing.Test/.build" `
-    -appSymbolsFolder "Customizing/.build"
+    -appProjectFolder "<TestAppFolder>" `
+    -appOutputFolder "<TestAppFolder>/.build" `
+    -appSymbolsFolder "<MainAppFolder>/.build"
 ```
 
 > **Tip:** If `$BC_COMPILER_FOLDER` is not set, run the setup step manually or recreate the compiler folder.
