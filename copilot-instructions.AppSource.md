@@ -177,7 +177,7 @@ This also applies when extending base objects: the prefix must be applied at Con
 
 CIT rules:
 - Registered base prefix: `CIG`.
-- Additionally, use a product-specific 3-letter suffix after `CIG` to avoid collisions across multiple CIT apps in one tenant (e.g., `CIG STP`, `CIG C4D`).
+- Additionally, use a product-specific 3-character prefix segment in the literal format `CIG XXX` (with a space), where `XXX` identifies the product, to avoid collisions across multiple CIT apps in one tenant (e.g., `CIG STP`, `CIG C4D`).
 
 Tooling:
 - AppSourceCop is used to validate AppSource rules; configure it via an `AppSourceCop.json` in the app root.
