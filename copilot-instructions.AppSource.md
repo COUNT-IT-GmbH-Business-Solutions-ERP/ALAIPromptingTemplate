@@ -21,18 +21,21 @@ Run the following PowerShell snippet to compile each modified AL project **befor
 ```powershell
 Import-Module BcContainerHelper
 
+# Replace these placeholders with the actual AL-Go app folder names from this repository.
+# Example: "App" and "Test" if those are the folders used in the repo.
+
 # Compile the main app
 Compile-AppWithBcCompilerFolder `
     -compilerFolder $env:BC_COMPILER_FOLDER `
-    -appProjectFolder "Customizing" `
-    -appOutputFolder "Customizing/.build"
+    -appProjectFolder "<MAIN_APP_FOLDER>" `
+    -appOutputFolder "<MAIN_APP_FOLDER>/.build"
 
 # Compile the test app (depends on the main app output)
 Compile-AppWithBcCompilerFolder `
     -compilerFolder $env:BC_COMPILER_FOLDER `
-    -appProjectFolder "Customizing.Test" `
-    -appOutputFolder "Customizing.Test/.build" `
-    -appSymbolsFolder "Customizing/.build"
+    -appProjectFolder "<TEST_APP_FOLDER>" `
+    -appOutputFolder "<TEST_APP_FOLDER>/.build" `
+    -appSymbolsFolder "<MAIN_APP_FOLDER>/.build"
 ```
 
 > **Tip:** If `$BC_COMPILER_FOLDER` is not set, run the setup step manually or recreate the compiler folder:
