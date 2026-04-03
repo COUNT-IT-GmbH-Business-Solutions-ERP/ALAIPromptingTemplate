@@ -211,7 +211,7 @@ Event subscriber codeunits are placed in a dedicated `EventSub` folder to avoid 
 - CamelCase
 
 ### Object naming
-- Object Names mustn't exceed 30 characters length
+- Object names must not exceed 30 characters.
 
 ### Captions for table fields
 - Always set `Caption` for table fields, even if identical to the name.
