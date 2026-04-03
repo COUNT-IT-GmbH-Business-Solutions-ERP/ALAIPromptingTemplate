@@ -41,8 +41,11 @@ Compile-AppWithBcCompilerFolder `
 > **Tip:** If `$BC_COMPILER_FOLDER` is not set, run the setup step manually or recreate the compiler folder:
 > ```powershell
 > Import-Module BcContainerHelper
+> # Derive these values from the repository configuration (for example `app.json` and/or `.AL-Go/settings.json`)
+> $bcVersion = '<repo BC version>'
+> $bcCountry = '<repo country>'
 > $env:BC_COMPILER_FOLDER = New-BcCompilerFolder `
->     -artifactUrl (Get-BcArtifactUrl -type Sandbox -version 22 -country at -select Latest) `
+>     -artifactUrl (Get-BcArtifactUrl -type Sandbox -version $bcVersion -country $bcCountry -select Latest) `
 >     -cacheFolder (Join-Path $HOME '.bc-compiler-cache')
 > ```
 
