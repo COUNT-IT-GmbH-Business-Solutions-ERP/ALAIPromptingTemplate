@@ -35,11 +35,12 @@ Compile-AppWithBcCompilerFolder `
     -appSymbolsFolder "Customizing/.build"
 ```
 
-> **Tip:** If `$BC_COMPILER_FOLDER` is not set, run the setup step manually or recreate the compiler folder:
+> **Tip:** If `$BC_COMPILER_FOLDER` is not set, run the setup step manually or recreate the compiler folder.
+> Use the BC version and country that match this repository's `app.json` / project settings; the values below are placeholders and must be replaced:
 > ```powershell
 > Import-Module BcContainerHelper
 > $env:BC_COMPILER_FOLDER = New-BcCompilerFolder `
->     -artifactUrl (Get-BcArtifactUrl -type Sandbox -version 22 -country at -select Latest) `
+>     -artifactUrl (Get-BcArtifactUrl -type Sandbox -version <BC major version from app.json> -country <country from project settings> -select Latest) `
 >     -cacheFolder (Join-Path $HOME '.bc-compiler-cache')
 > ```
 
